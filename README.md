@@ -37,5 +37,5 @@ Client names will be an integer determined by the order in which they request a 
 - example: connect
 
 **Log Format**
-Client [clientNum] >>> [request] >>> [time]
-Client [clientNum] >>> QUIT >>> [duration time (seconds)]
+- Client [clientNum] >>> [request] >>> [time]
+- Client [clientNum] >>> QUIT >>> [duration time (seconds)]
