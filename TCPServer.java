@@ -68,7 +68,7 @@ class TCPServer extends Thread {
 					System.out.println("Client " + clientNum + " >>> QUIT >>> Connection Duration: "
 							+ connectTime.until(disconnectTime, ChronoUnit.SECONDS) + " sec");
 
-					outToClient.writeBytes("Confirming end connection request\n");
+					outToClient.writeBytes("Server >>> Confirming end connection request\n");
 					outToClient.flush();
 				}
 			}
