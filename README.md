@@ -26,7 +26,7 @@ Methods:
 
 **TCPClient.java**
 The TCPClient class requests a connection to the TCP server and sends formatted requests for opening a connection, closing a connection, and math calculations. 
-Client names will be an interger determined by the order in which they request a connection with the TCP server. This simple code is found in the ThreadRunner class. 
+Client names will be an integer determined by the order in which they request a connection with the TCP server. This simple code is found in the ThreadRunner class. 
 
 
 
