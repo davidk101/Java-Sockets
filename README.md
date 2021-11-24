@@ -41,3 +41,8 @@ Client names will be an integer determined by the order in which they request a 
 - Client [clientNum] >>> QUIT >>> Connection Duration: [duration time] sec
 - Client [clientNum] >>> MATH >>> [mathRequest] >>> Solution: [return value from math function]
 
+**Server Response Format to client**
+- Server >>> Successful connection...
+- Server >>> Solution: [solution] 
+- Server >>> Confirming end connection request
+
