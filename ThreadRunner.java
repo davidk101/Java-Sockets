@@ -1,25 +1,30 @@
 import java.net.*;
+import java.time.LocalTime;
 import java.io.*;
-
 
 public class ThreadRunner {
 
-	public static void main(String[] args) throws Exception{
-		try{
-		      ServerSocket server=new ServerSocket(6789);
-		      int counter=0;
-		      System.out.println("Server Started ....");
-		      while(true){
-		        counter++;
-		        Socket serverClient=server.accept();  //server accept the client connection request
-		        System.out.println(" >> " + "Client No:" + counter + " started!");
-		        TCPServer sct = new TCPServer(serverClient,counter); //send  the request to a separate thread
-		        sct.start();
-		      }
-		    }catch(Exception e){
-		      System.out.println(e);
-		    }
-		
-	}
+	public static void main(String[] args) throws Exception {
+		LocalTime connectTime;
 
+		try {
+			ServerSocket server = new ServerSocket(6789);
+			int counter = 0;
+			System.out.println("Server Started on PORT 6789...");
+			
+			while (true) {
+				counter++;
+				// server accept the client connection request
+				Socket serverClient = server.accept();
+				connectTime = LocalTime.now();
+				
+				
+				// send the request to a separate thread and run()
+				TCPServer sct = new TCPServer(serverClient, counter, connectTime); 
+				sct.start();
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 }
