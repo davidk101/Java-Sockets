@@ -31,7 +31,7 @@ Client names will be an interger determined by the order in which they request a
 
 
 
-**Message requests formats:** [requestType].[args]
+**Message requests formats:** [requestType].[args]  (if any args)
 - example: math.6/2
-- example: quit.0
-- example: connect.0
+- example: quit
+- example: connect
