@@ -3,13 +3,12 @@ import java.net.*;
 
 class TCPServer extends Thread { 
 	Socket connectionSocket;
-	int clientNo;
+	int clientNum;
 	String clientSentence, capitalizedSentence; 
-	int squre;
 	
 	TCPServer(Socket inSocket,int counter){
 	  connectionSocket = inSocket;
-	  clientNo=counter;
+	  clientNum=counter;
 	}
 	
 	public void run(){
@@ -24,7 +23,7 @@ class TCPServer extends Thread {
 	    	  //accept TCP client request until end request
 	    	  clientSentence = inFromClient.readLine();
 	    	  while((clientSentence != null) && !(clientSentence.toUpperCase().equals("QUIT"))) {
-	              System.out.println("Recieved message from client: " + clientSentence + "\n");
+	              System.out.println("Recieved message from client: " + clientNum + " " + clientSentence + "\n");
 	              
 	              if(clientSentence.equalsIgnoreCase("CONNECT")){
 	            	  //confirm successful connection
@@ -42,7 +41,7 @@ class TCPServer extends Thread {
 	              //TCP client message manipulation and return 
 	              capitalizedSentence = clientSentence.toUpperCase() + '\n'; 
 	              outToClient.writeBytes(capitalizedSentence); 
-	              System.out.println("Sending message to client: " + capitalizedSentence + "\n");
+	              System.out.println("Sending message to client: " + clientNum + " " + capitalizedSentence + "\n");
 	              outToClient.flush();
 	              
 	              
@@ -60,7 +59,7 @@ class TCPServer extends Thread {
 	  }catch(Exception ex){
 	    System.out.println(ex);
 	  }finally{
-	    System.out.println("Client -" + clientNo + " exit!! ");
+	    System.out.println("Client " + clientNum + " has disconnected. ");
 	  }
 	}
   
