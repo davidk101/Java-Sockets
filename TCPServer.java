@@ -36,7 +36,7 @@ class TCPServer extends Thread {
 								+ connectTime + " sec");
 						serverResponse = "Server >>> Successful connection...\n";
 
-					} else if (clientSentence.contains("MATH")) {
+					} else if (clientSentence.contains("math")) {
 						request = clientSentence.split("\\.");
 						solution = mathFunction(request[1]);
 						System.out.println(
@@ -80,8 +80,41 @@ class TCPServer extends Thread {
 	}
 
 	public static int mathFunction(String mathRequest) {
-		// TODO: implement math calculation on math request[1]
-		// System.out.println(mathRequest);
+		try {
+            int a, b;
+
+            if (mathRequest.contains("+")) {
+                String[] splitExpr = mathRequest.split("\\+");
+                a = Integer.valueOf(splitExpr[0]);
+                b = Integer.valueOf(splitExpr[1]);
+                return a + b;
+            } else if (mathRequest.contains("-")) {
+                String[] splitExpr = mathRequest.split("-");
+                a = Integer.valueOf(splitExpr[0]);
+                b = Integer.valueOf(splitExpr[1]);
+                return a - b;
+            } else if (mathRequest.contains("*")) {
+                String[] splitExpr = mathRequest.split("\\*");
+                a = Integer.valueOf(splitExpr[0]);
+                b = Integer.valueOf(splitExpr[1]);
+                return a * b;
+            } else if (mathRequest.contains("/")) {
+                String[] splitExpr = mathRequest.split("/");
+                a = Integer.valueOf(splitExpr[0]);
+                b = Integer.valueOf(splitExpr[1]);
+                return a / b;
+            } else if (mathRequest.contains("^")) {
+                String[] splitExpr = mathRequest.split("\\^");
+                a = Integer.valueOf(splitExpr[0]);
+                b = Integer.valueOf(splitExpr[1]);
+                return (int) Math.pow(a, b);
+            }
+
+        }
+        catch(Exception e) {
+            System.out.println(e);
+            return -1;
+        }
 
 		return 0;
 	}
