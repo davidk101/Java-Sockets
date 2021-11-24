@@ -32,9 +32,9 @@ Client names will be an integer determined by the order in which they request a 
 
 
 **Message requests formats:** [requestType].[args]  (if any args)
-- example: math.6/2
-- example: quit
-- example: connect
+- example: MATH.6/2
+- example: QUIT
+- example: CONNECT
 
 **Log Format**
 - Client [clientNum] >>> [request] >>> [time]
