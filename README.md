@@ -4,7 +4,8 @@
 - compile all three class files using javac (example: javac TCPClient.java)
 - run ThreadRunner.java (java ThreadRunner)
 - run TCP clients, open a new terminal for each client you want to run (java TCPClient.java)
-- you can start entering requests in the client terminals and you will get reponses from the TCP server
+- to connect to the TCP server, enter CONNECT from the client terminal
+- you can start entering math requests in the client terminals and you will get reponses from the TCP server
 - enter 'quit' when you want to disconnect a client
 
 
@@ -46,3 +47,7 @@ Client names will be an integer determined by the order in which they request a 
 - Server >>> Solution: [solution] 
 - Server >>> Confirming end connection request
 
+
+
+**NOTES**
+- Any request not fitting the message format will default to a upper case response from the server 
