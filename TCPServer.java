@@ -36,7 +36,7 @@ class TCPServer extends Thread {
 								+ connectTime + " sec");
 						serverResponse = "Server >>> Successful connection...\n";
 
-					} else if (clientSentence.contains("math")) {
+					} else if (clientSentence.contains("MATH")) {
 						request = clientSentence.split("\\.");
 						solution = mathFunction(request[1]);
 						System.out.println(
