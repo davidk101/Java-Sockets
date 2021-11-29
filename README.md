@@ -18,9 +18,9 @@ The ThreadRunner class is in charge of starting individual threads for the incom
 
 **TCPServer.java**
 This TCPServer class handles incoming requests from TCP clients by creating independent threads for each client.
-Methods: 
-- keep log
-- math calculation
+Methods and features: 
+- Keeps log - this log is printed to console
+- Math calculation - defined in a method which returns solution to simple math requests from client 
 
 
 
