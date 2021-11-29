@@ -31,12 +31,12 @@ class TCPServer extends Thread {
 
 				while ((clientSentence != null) && !(clientSentence.toUpperCase().equals("QUIT"))) {
 
-					if (clientSentence.equals("CONNECT")) {
+					if (clientSentence.toUpperCase().equals("CONNECT")) {
 						System.out.println("Client " + clientNum + " >>> CONNECT >>> Open Connection Time: "
 								+ connectTime + " sec");
 						serverResponse = "Server >>> Successful connection...\n";
 
-					} else if (clientSentence.contains("MATH")) {
+					} else if (clientSentence.toUpperCase().contains("MATH")) {
 						request = clientSentence.split("\\.");
 						solution = mathFunction(request[1]);
 						System.out.println(
