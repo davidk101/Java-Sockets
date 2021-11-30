@@ -48,8 +48,6 @@ class TCPServer extends Thread {
 						serverResponse = clientSentence.toUpperCase() + '\n';
 					}
 
-					// TODO: any other client message will just get capitalized and returned, we can
-					// change this..
 					outToClient.writeBytes(serverResponse);
 					outToClient.flush();
 
@@ -79,10 +77,13 @@ class TCPServer extends Thread {
 		}
 	}
 
+
+	// Simple math functions: addition, subtraction, multiplication, division and exponent
 	public static int mathFunction(String mathRequest) {
 		try {
             int a, b;
-
+			// If the math request contains the associated math operator, then we split (via split() method) by that operator
+			// Then we set the value to the left of the split to be the first integer and the value to the right to be the second and then do the operation.
             if (mathRequest.contains("+")) {
                 String[] splitExpr = mathRequest.split("\\+");
                 a = Integer.valueOf(splitExpr[0]);
@@ -111,6 +112,7 @@ class TCPServer extends Thread {
             }
 
         }
+		// If there was any type of error in the syntax of the inputted math expression
         catch(Exception e) {
             System.out.println(e);
             return -1;

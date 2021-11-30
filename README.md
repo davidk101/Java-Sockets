@@ -1,12 +1,13 @@
 # CS 4390 Network Application
 
 **Run Program** 
-- compile all three class files using javac (example: javac TCPClient.java)
+- compile all three java files into class files using make command.
 - run ThreadRunner.java (java ThreadRunner)
-- run TCP clients, open a new terminal for each client you want to run (java TCPClient.java)
+- run TCP clients, open a new terminal for each client you want to run (java TCPClient)
 - to connect to the TCP server, enter CONNECT from the client terminal
 - you can start entering math requests in the client terminals and you will get reponses from the TCP server
 - enter 'quit' when you want to disconnect a client
+- note: you can run the command make clean to clear the .class files
 
 
 
