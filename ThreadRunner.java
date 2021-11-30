@@ -6,11 +6,13 @@ public class ThreadRunner {
 
 	public static void main(String[] args) throws Exception {
 		LocalTime connectTime;
+		int PORT = Integer.parseInt(args[0]); 		
+
 
 		try {
-			ServerSocket server = new ServerSocket(6789);
+			ServerSocket server = new ServerSocket(PORT);
 			int counter = 0;
-			System.out.println("Server Started on PORT 6789...");
+			System.out.println("Server Started on PORT " + PORT);
 			
 			while (true) {
 				counter++;

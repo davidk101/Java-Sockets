@@ -11,9 +11,12 @@ public class TCPClient {
 		BufferedReader inFromUser = null;
 		DataOutputStream outToServer = null;
 		BufferedReader inFromServer = null;
-
-		Socket clientSocket = new Socket("127.0.0.1", 6789);
-		System.out.println("Starting client on PORT 6789");
+		
+		String ip = argv[0];
+		int PORT = Integer.parseInt(argv[1]); 		
+		
+		Socket clientSocket = new Socket(ip, PORT);
+		System.out.println("Starting client on PORT " + PORT);
 
 		// init IO
 		try {
